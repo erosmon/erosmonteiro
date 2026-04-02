@@ -1,7 +1,11 @@
 let num1: number = 5;
 let num2: number = 5;
 
-class calculador {
+class Calculadora {
+     resultado:number = 0;
+    exibirresultado(){
+
+    }
      soma(a: number,b: number):number{
         return a + b;
         
@@ -17,12 +21,3 @@ class calculador {
     }
 }
 
-/*console.log("digite:\n + para somar \n - subtrair \n* para dividir\n/ para multiplicacao ");
-
-    
-
-    console.log( soma(num1, num2) );
-    console.log( subtraçao(num1, num2) );
-    console.log( dividir(num1, num2) );
-    console.log( multiplicaçao(num1, num2) );
-/*
