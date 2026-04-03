@@ -1,4 +1,5 @@
 import { professorconst, pessoas,alunos } from  "./constructor.ts";
+import {contador} from "./static.ts";
 
 let prof:professorconst = new professorconst("renan", 15,"matematica");
 prof.falar()
@@ -11,4 +12,4 @@ eros2.falar();
 eros2.alterarnota(5);
 eros2.falar();
 
-
+let statictest: contador = new contador ("static");
