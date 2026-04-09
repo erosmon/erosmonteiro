@@ -1,0 +1,23 @@
+.vermelho{
+    height: 300px;/*altura*/
+    width: 300px;/*largura*/
+    background-color: rgb(255, 0, 0);/*cor fundo*/
+}
+.azul{
+    height: 250px;
+    width: 250px;
+    background-color: rgb(0, 44, 139);
+}
+#caixaverde{
+     height: 200px;
+    width: 200px;
+    background-color: rgb(232, 236, 232);
+    
+}
+.caixa{
+    height: 330px;
+    width: 256px;
+    border: 2px solid red;
+    display: inline-grid;
+    padding: 20px 20px;
+}
