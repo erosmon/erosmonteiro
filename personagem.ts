@@ -1,28 +1,44 @@
- export abstract class personagem{
-    public nome:string = "personagem";
-    protected forca:number = 0;
-    protected vida:number = 0;
-    
-    constructor(nome:string,forca:number,vida:number){
-        this.nome = nome;
-        this.forca = forca;
-        this.vida = vida;
-    }
+export abstract class personagem {
+  public nome: string = "personagem";
+  protected forca: number = 0;
+  protected vida: number = 0;
+  protected cura: number = 0;
+  private jausoucura: boolean = false;
+  protected defesa: number = 0;
 
-    isvivo():boolean {
-       return this.vida > 0;
-    }
+  constructor(nome: string, forca: number, vida: number, cura: number,defesa:number) {
+    this.nome = nome;
+    this.forca = forca;
+    this.vida = vida;
+    this.cura = cura;
+    this.defesa = defesa;
+  }
 
-    sofreratk(dano:number):void{
-        this.vida = this.vida - dano;
-        console.log(`${this.nome}recebeu ${dano} de dano .vida atual: ${this.vida}`);
-    }
-     geraratk():number{
-        let maximoatk = 3;
-        
-        return Math.floor(Math.random() * maximoatk);
-     }
-     public abstract atacar(persona:personagem ):void
+  isvivo(): boolean {
+    return this.vida > 0;
+  }
 
-    
+  sofreratk(dano: number): void {
+   let danoreal = dano - (dano * (this.defesa / 100))
+    this.vida = this.vida - danoreal;
+    console.log(
+      `${this.nome} recebeu ${danoreal} de dano .vida atual: ${this.vida}`,
+    );
+
+    this.usarcura();
+  }
+  usarcura() {
+    if (this.vida <= 50 && !this.jausoucura) {
+      this.vida = this.vida + this.cura;
+      this.jausoucura = true;
+      console.log(`${this.nome} usou a cura. vida atual: ${this.vida}`);
+    }
+  }
+  geraratk(): number {
+    let maximoatk = 3;
+
+    return Math.floor(Math.random() * maximoatk); //randomizer
+  }
+
+  public abstract atacar(persona: personagem): void;
 }
