@@ -4,29 +4,30 @@
     <!-- Metadados: não aparecem na tela -->
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="calculador.css" />
+    <script src ="calculadora.js"></script>
   </head>
-
+     
   <body>
-    <div>
-        texto: <input type="text" />
-    </div>
-    <div>
+    <div class="calculadora">
+      <input class="resultado" id="calcjava" type="text">
 
-        <div>
-            <div>5</div>
+      <div class="botao">     
+          <button onclick="adicionar('+')">+</button>
+          <button onclick="adicionar('-')">-</button>
+          <button onclick="adicionar('*')">*</button>
+          <button onclick="adicionar('/')">/</button>
+          <button onclick="adicionar('1')">1</button>
+          <button onclick="adicionar('2')">2</button>
+          <button onclick="adicionar('3')">3</button>
+          <button onclick="adicionar('4')">4</button>
+          <button onclick="adicionar('5')">5</button>
+          <button onclick="adicionar('6')">6</button>
+          <button onclick="adicionar('7')">7</button>
+          <button onclick="adicionar('8')">8</button>
+          <button onclick="adicionar('9')">9</button>
+          <button onclick="adicionar('0')">0</button>
+           <button onclick="calcular()">=</button>
         </div>
-
-        radio:
-      <input type="radio" name="opcao" /> mais
-      <input type="radio" name="opcoes" /> menos
-      <input type="radio" name="opcoes" /> divisao
-      <input type="radio" name="opcoes" /> multiplicaçao
-      
     </div>
-    <div>
-        1: <input type="checkbox" /> 2: <input type="checkbox" />3: <input type="checkbox" />4: <input type="checkbox" />
-    </div>
-    
-
 
   </body>
