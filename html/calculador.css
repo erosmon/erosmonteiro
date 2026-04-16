@@ -15,8 +15,10 @@
     text-align: right;
 }
 .botao button{
-    font-size: 24px;
+    display: inline;
+    font-size: 35px;
     height: 50px;
-    background: white;
-    border: none;
+    background: green;
+    border: black;
+    text-align: right;
 }  
