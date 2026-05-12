@@ -8,10 +8,8 @@ export class Jogo {
 
     this.atualizainterf(player1, player2);
 
-    while (player1.isvivo() && player2.isvivo) {
-      player1.log(
-        "\n ============= turno" + turno + "============= ...............",
-      );
+    while (player1.isvivo() && player2.isvivo()) {
+      player1.log("\n ============= turno" + turno + "============= ...............",);
       player1.atacar(player2);
       this.atualizainterf(player1, player2);
       await this.esperatempo();

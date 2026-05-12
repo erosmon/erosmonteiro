@@ -22,14 +22,23 @@ export abstract class personagem {
   isvivo(): boolean {
     return this.vida > 0;
   }
-
-  sofreratk(dano: number): void {
-   let danoreal = dano - (dano * (this.defesa / 100))
-    this.vida = this.vida - danoreal;
-    this.log(`${this.nome} recebeu ${danoreal} de dano .vida atual: ${this.vida}`);
-
-    this.usarcura();
+    gerarcritico(): boolean {
+    return (Math.random() * (0.10 - 0.1) + 0.1)> 0.2;
   }
+
+  sofreratkcriticoo(dano: number, atacante: string): void {
+    const critico = this.gerarcritico();
+    const danoFinal = critico ? dano * 2 : dano;
+    const danoreal = danoFinal - (danoFinal * (this.defesa / 100));
+    this.vida = Math.max(0, this.vida - danoreal);
+
+    if (critico) {
+      this.log(` 💥 CRÍTICO! ${atacante} causou ${danoreal.toFixed(1)} de dano em ${this.nome}! Vida atual: ${this.vida.toFixed(1)}`);
+    } else {
+      this.log(`${this.nome} recebeu ${danoreal.toFixed(1)} de dano. Vida atual: ${this.vida.toFixed(1)}`);
+    }
+  }
+
   getvida(){
       return this.vida;
     }
@@ -45,6 +54,7 @@ export abstract class personagem {
       this.jausoucura = true;
       this.log(`${this.nome} usou a cura. vida atual: ${this.vida}`);
     }
+     this.usarcura();
   }
   geraratk(): number {
    return Math.floor(Math.random() * 3) + 1;
