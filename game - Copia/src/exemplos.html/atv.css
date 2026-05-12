@@ -1,0 +1,51 @@
+.caixaverde{
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    border-radius: 8px;
+}
+.caixacirculo{
+height: 200px;
+    width: 200px;
+    background-color: gray;
+    border-radius: 8px;
+}
+button:hover{
+  background-color: red;
+}
+
+@keyframes rodar{
+  from { transform: rotate(0deg); }
+  to { transform: rotate(90deg); }
+}
+
+@keyframes rodarr{
+   0%   {background-color: blue;transition: 3s;}
+   50%   {background-color: red;transition: 4s;}
+   100%{background-color: yellow;transition: 5s;}
+}
+
+.animacao{
+    animation: rodar 5s linear infinite;
+}
+@keyframes mudar{
+     0%   {border-radius: 0px;}
+    50%{background-color:gray; border-radius: 80px;}
+
+}
+@keyframes rodar{
+  from { transform: rotate(90deg);  }
+  to { transform: rotate(90deg); }
+}
+.animacaoo{
+    animation: mudar 2s linear infinite ;
+}
+
+
+@keyframes mexer{
+  0% { transform: translateX(0); }
+  50%{ transform: translateX(500px); }
+}
+.animacao{
+     animation: mexer 2s linear infinite ;
+}
