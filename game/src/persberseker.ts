@@ -6,24 +6,24 @@ export class Berserk extends personagem {
   }
 
   public atacar(persona: personagem): void {
+    let critico = 0;
     let dado = this.geraratk();
     switch (dado) {
       case 1:
-        this.log(
-          `${this.nome} atacou o personagem: ${persona.nome} com ataque 1`);
-        persona.sofreratkcriticoo(this.forca + 15,this.nome);
+        this.log(`${this.nome} atacou o personagem: ${persona.nome} com ataque 1`);
+        critico = 5;
         break;
       case 2:
-        this.log(
-          `${this.nome} atacou o personagem: ${persona.nome} com ataque 2`);
-        persona.sofreratkcriticoo(this.forca + 20,this.nome);
+        this.log(`${this.nome} atacou o personagem: ${persona.nome} com ataque 2`);
+        critico = 10;
         break;
       case 3:
-        this.log(
-          `${this.nome} atacou o personagem: ${persona.nome} com ataque 3`);
-        persona.sofreratkcriticoo(this.forca + 30,this.nome);
+        this.log(`${this.nome} atacou o personagem: ${persona.nome} com ataque 3`);
+        critico = 15;
         break;
       
     }
+    //MELHORIAS RECOMENDADAS - Criacao da variavel critico  e no final do switch chamar o critico.
+    persona.sofreratkcriticoo(this.forca + critico,this.nome); 
   }
 }

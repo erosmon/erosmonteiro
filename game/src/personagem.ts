@@ -17,7 +17,7 @@ export abstract class personagem {
   }
  public log(mensagem:string){
   console.log(mensagem);
-  document.getElementById("consolee")!.innerHTML+= '<P>' + mensagem +'</P>';
+  document.getElementById("console")!.innerHTML+= '<P>' + mensagem +'</P>';
  }
   isvivo(): boolean {
     return this.vida > 0;
@@ -54,7 +54,7 @@ export abstract class personagem {
       this.jausoucura = true;
       this.log(`${this.nome} usou a cura. vida atual: ${this.vida}`);
     }
-     this.usarcura();
+    //MELHORIAS RECOMENDADAS - usarcura nao chama mais ela mesma
   }
   geraratk(): number {
    return Math.floor(Math.random() * 3) + 1;
